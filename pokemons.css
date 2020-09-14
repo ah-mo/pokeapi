@@ -1,0 +1,96 @@
+* {
+    font-family: 'Arvo', serif;
+  }
+    
+    .wrapper {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+    }
+    
+    .controls, .results {
+      flex: 1;
+      padding: 10px;
+    }
+    /* .controls {
+      flex:1;
+    } */
+    form p:nth-of-type(1) {
+      margin-top: 0;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    h2 {
+      font-size: 20px;
+    }
+    
+   
+    article a {
+      color:black;
+    }
+    article p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    
+    article p:nth-of-type(2) {
+      font-size: 14px;
+      line-height: 2;
+    }
+    
+    nav {
+      margin-bottom: 50px;
+    }
+    
+    .prev {
+      float: left;
+      display: none;
+    }
+    
+    .next {
+      float: right;
+      display: none;
+    }
+    
+    article {
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #ddd;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    img {
+      float: right;
+      margin-left: 20px;
+      max-width: 200px;
+    }
+    
+    .clearfix {
+      clear: both;
+    }
+    
+    span {
+      background-color: #ccc;
+      padding: 5px;
+      margin: 5px;
+    }
+  
+    button {
+      border: none;
+      background-color: #efefef;
+      padding: 8px;
+    }
+  
+    button:hover {
+      font-weight:bold;
+    }
+  
+    input {
+      border: none;
+      background-color: #efefef;
+      padding: 6px 6px 6px 12px;
+    }
