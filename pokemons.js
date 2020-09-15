@@ -37,7 +37,11 @@ function fetchResults(e){
 };
 
 function displayResults(json) {
+    while (section.firstChild) {//begins while loop (while loops result always have to come back true then stop when false(y)) to check if section has a firstChild element
+        section.removeChild(section.firstChild);//if it does remove the firstChild, this will clear the section to display the next results
+    }
     let pokemon = json.name;
+    let pNum = json.id;
     let type = json.types[0].type.name;
     // if (type = ) {
 
@@ -50,15 +54,25 @@ function displayResults(json) {
     console.log(wt);
     let card = document.createElement('div');
     card.setAttribute('class', 'card bg-light mb-3');
-    card.style('max-width:18em;')
+    let pHeader = document.createElement('div');
+    pHeader.setAttribute('class', 'card-header');
     let pName = document.createElement('h1');
-    pName.textContent = pokemon;
-    let pType = document.createElement('h2');
+    pName.textContent = `${pokemon} // #${pNum}`;
+    
+    let pType = document.createElement('p');
     pType.textContent = type;
-    let pHt = document.createElement('h3');
-    pHt.textContent = ht;
-    let pWt = document.createElement('h3');
-    pWt.textContent = wt;
+    let pHt = document.createElement('p');
+    pHt.textContent = 'Ht: ' + ht + ' ft.';
+    let pWt = document.createElement('p');
+    pWt.textContent = 'Wt: ' + wt + ' lb.';
+    pHeader.appendChild(pName);
+    card.appendChild(pHeader);
+    card.appendChild(pType);
+    card.appendChild(pWt); //then creating the heading 
+    card.appendChild(pHt);
+     //then adding the image
+     //then adding the keywords paragraph
+    section.appendChild(card);
 }
 //Button functionality
 function nextPage(e){
