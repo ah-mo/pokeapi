@@ -42,6 +42,7 @@ function displayResults(json) {
     }
     let pokemon = json.name;
     let pNum = json.id;
+    let pImgSrc = json.sprites.front_default;
     let type = json.types[0].type.name;
     // if (type = ) {
 
@@ -58,6 +59,10 @@ function displayResults(json) {
     pHeader.setAttribute('class', 'card-header');
     let pName = document.createElement('h1');
     pName.textContent = `${pokemon} // #${pNum}`;
+
+    let pPic = document.createElement('img');
+    pPic.setAttribute('class', 'dexImg')
+    pPic.setAttribute('src', pImgSrc);
     
     let pType = document.createElement('p');
     pType.textContent = type;
@@ -67,6 +72,7 @@ function displayResults(json) {
     pWt.textContent = 'Wt: ' + wt + ' lb.';
     pHeader.appendChild(pName);
     card.appendChild(pHeader);
+    card.appendChild(pPic);
     card.appendChild(pType);
     card.appendChild(pWt); //then creating the heading 
     card.appendChild(pHt);
