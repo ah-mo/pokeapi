@@ -1,98 +1,92 @@
 * {
-  font-family: 'VT323', monospace;
-  }
+  font-family: 'Exo 2', sans-serif;
+}
+
+html, body {
+  background-color: #efefef;
+}
+
+/* Header Styles */
+
+
+
+header {
+  background-color: #e4000f;
+  padding: 75px 0 75px;
+}
+
+header h1 {
+  text-align:center;
+  color: #fff;
+}
+header h2 {
+  text-align: center;
+  font-size: 14px;
+}
     
-    .wrapper {
-      width: 80%;
-      margin: 0 auto;
-      display: flex;
-    }
+/* .wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+} */
+
+.searchHeader {
+  background-color:#e4000f;
+  color: #fff;
+  margin-top: -25px;
+  border-radius: 5px 5px 0 0;
+  height: 35px;
+  padding-top: 7px;
+  margin-bottom:15px;
+}
+
+.controls {
+  flex: 1;
+  margin: auto;
+  max-width: 500px;
+  box-shadow: 0px 2px 12px #888;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 25px;
+  background-color: #fff;
+  padding: 25px 0 15px;
+}
+
+.results {
+  flex: 1;
+  padding: 10px;
+}
+
+img {
+  float: right;
+  margin-left: 20px;
+  width: 150px;
+}
     
-    .controls, .results {
-      flex: 1;
-      padding: 10px;
-    }
-    /* .controls {
-      flex:1;
-    } */
-    form p:nth-of-type(1) {
-      margin-top: 0;
-    }
+.clearfix {
+  clear: both;
+}
     
-    h1 {
-      text-align: center;
-    }
-    
-    h2 {
-      font-size: 20px;
-    }
-    
-   
-    article a {
-      color:black;
-    }
-    article p {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-    
-    article p:nth-of-type(2) {
-      font-size: 14px;
-      line-height: 2;
-    }
-    
-    nav {
-      margin-bottom: 50px;
-    }
-    
-    .prev {
-      float: left;
-      display: none;
-    }
-    
-    .next {
-      float: right;
-      display: none;
-    }
-    
-    article {
-      padding: 10px;
-      margin-bottom: 20px;
-      background-color: #ddd;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    
-    img {
-      float: right;
-      margin-left: 20px;
-      width: 150px;
-    }
-    
-    .clearfix {
-      clear: both;
-    }
-    
-    span {
-      background-color: #ccc;
-      padding: 5px;
-      margin: 5px;
-    }
+button {
+  border: none;
+  background-color: #e4000f;
+  padding: 8px;
+}
   
-    button {
-      border: none;
-      background-color: #efefef;
-      padding: 8px;
-    }
+button:hover {
+  font-weight:bold;
+}
   
-    button:hover {
-      font-weight:bold;
-    }
-  
-    input {
-      border: none;
-      background-color: #efefef;
-      padding: 6px 6px 6px 12px;
-    }
+input {
+  border: none;
+  padding: 6px 6px 6px 12px;
+  min-width: 300px;
+  text-align: center;
+}
+
+section {
+  max-width: 500px;
+  margin:auto;
+}
 
     

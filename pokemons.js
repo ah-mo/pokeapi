@@ -4,22 +4,16 @@ let url;
 
 //Search Form
 const searchTerm = document.querySelector('.search');
-const startDate = document.querySelector('.start-date');
-const endDate = document.querySelector('.end-date');
 const searchForm = document.querySelector('form');
 const submitBtn = document.querySelector('.submit');
 
-//Results Navigation
-const nextBtn = document.querySelector('.next');
-const previousBtn = document.querySelector('.prev');
-const nav = document.querySelector('nav');
-
 //Results section
 const section = document.querySelector('section');
+const pokename = document.querySelector('card-header');
 
 //Event Listeners
 searchForm.addEventListener('submit', fetchResults); 
-// nextBtn.addEventListener('click', nextPage); 
+submitBtn.addEventListener('click', cardType); 
 // previousBtn.addEventListener('click', previousPage);
 
 //Retriving the data, accessing a REST API
@@ -31,14 +25,16 @@ function fetchResults(e){
         .then(function(result) {
             return result.json();
         }).then(function(json) {
-            console.log(json)
+            console.log(json)    
             displayResults(json);
         });
+    
 };
 
 function displayResults(json) {
     while (section.firstChild) {//begins while loop (while loops result always have to come back true then stop when false(y)) to check if section has a firstChild element
         section.removeChild(section.firstChild);//if it does remove the firstChild, this will clear the section to display the next results
+        
     }
     let pokemon = json.name;
     let pNum = json.id;
@@ -57,6 +53,20 @@ function displayResults(json) {
     card.setAttribute('class', 'card bg-light mb-3');
     let pHeader = document.createElement('div');
     pHeader.setAttribute('class', 'card-header');
+    // if (type = 'electric'){
+    //     pHeader.setAttribute('class', 'bg-warning')
+    // } else {
+    //     pHeader.setAttribute('class', '')
+    // }
+    // if (type = 'grass'){
+    //     pHeader.setAttribute('class', 'bg-success')
+    // } else if (type = 'water') {
+    //     pHeader.setAttribute('class', 'bg-primary')
+    // } else if (type = 'fire') {
+    //     pHeader.setAttribute('class', 'bg-danger')
+    // } else if (type = 'electric') {
+    //     pHeader.setAttribute('class', 'bg-warning')
+    // } else {}
     let pName = document.createElement('h1');
     pName.textContent = `${pokemon} // #${pNum}`;
 
@@ -80,29 +90,17 @@ function displayResults(json) {
      //then adding the keywords paragraph
     section.appendChild(card);
 }
-//Button functionality
-function nextPage(e){
-    console.log('Next button clicked');
-    pageNumber++;
-    if (pageNumber >= 0) {
-        document.querySelector('.prev').style.display = 'block';
-    }
-    fetchResults(e);
-    console.log("Page number:", pageNumber);
 
-}
-
-function previousPage(e){
-    
-    console.log('Previous button clicked');
-    if(pageNumber > 0) {
-        pageNumber--;
-    } else {
-        return;
-    }
-    fetchResults(e);
-    console.log("Page:", pageNumber);
-    if(pageNumber < 1) {
-        document.querySelector('.prev').style.display = 'none';
-    }
-}
+//Determine Pokemon type to set card color
+function cardType(){
+    let pHeader = document.createElement('div');
+    if (type = 'grass'){
+        pHeader.style.color = 'green';
+    } else if (type = 'water') {
+        pHeader.setAttribute('class', 'bg-primary')
+    } else if (type = 'fire') {
+        pHeader.setAttribute('class', 'bg-danger')
+    } else if (type = 'electric') {
+        pHeader.setAttribute('class', 'bg-warning')
+    } else {}
+};

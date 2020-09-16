@@ -6,33 +6,33 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <link href="pokemons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
   </head>
   <body>
-    <h1>AUSTIN'S PC (NOT TO BE CONFUSED WITH BILL'S)</h1>
+    <header>
+      <h1>Austin's PC</h1>
+      <h2>(not Bill's...)</h2>
+
+    </header>
 
     <div class="wrapper">
       <div class="controls">
+        <div class="searchHeader">Which Pokémon are you looking for?</div>
         <!--Search Form-->
         <form>
           <p>
-            <label for="search">Enter Pokemon Name or Number (required): </label>
-            <input type="text" id="search" class="search" required>
+            <!-- <label for="search">Which Pokémon are you looking for?</label> -->
+            <input type="text" id="search" class="search" placeholder="Search Pokémon by name or number..." required>
           </p>
           <p>
-            <button class="submit">Search</button>
+            <button class="submit">Find Pokémon</button>
           </p>
         </form>
       </div>
       <!--Results Section-->
       <div class="results">
-        <!--Results Navigation-->
-        <nav>
-          <button class="prev">Previous 10</button>
-          <button class="next">Next 10</button>
-        </nav>
-        <!--Results From Request-->
+          <!--Results From Request-->
         <section>
 
         </section>
