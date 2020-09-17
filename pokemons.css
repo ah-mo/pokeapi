@@ -4,6 +4,7 @@
 
 html, body {
   background-color: #efefef;
+  font-size: 14px;
 }
 
 /* Header Styles */
@@ -18,10 +19,11 @@ header {
 header h1 {
   text-align:center;
   color: #fff;
+  font-size: 3.7em;
 }
 header h2 {
   text-align: center;
-  font-size: 14px;
+  font-size: 1.3em;
 }
     
 /* .wrapper {
@@ -52,16 +54,7 @@ header h2 {
   padding: 25px 0 15px;
 }
 
-.results {
-  flex: 1;
-  padding: 10px;
-}
 
-img {
-  float: right;
-  margin-left: 20px;
-  width: 150px;
-}
     
 .clearfix {
   clear: both;
@@ -84,9 +77,33 @@ input {
   text-align: center;
 }
 
+/* Results */
+
 section {
-  max-width: 500px;
+  flex-flow: column;
+  max-width: 350px;
   margin:auto;
+  text-transform: capitalize;
+}
+section div p {
+  flex: 1;
+  text-align: right;
+  margin-right: 10px;
+}
+
+section img {
+  flex: 4;
+  width: 150px;
+}
+
+.results {
+  flex: 1;
+  padding: 10px;
+}
+
+img {
+  margin-left: 20px;
+  width: 150px;
 }
 
     

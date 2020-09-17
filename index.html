@@ -23,7 +23,7 @@
         <form>
           <p>
             <!-- <label for="search">Which Pokémon are you looking for?</label> -->
-            <input type="text" id="search" class="search" placeholder="Search Pokémon by name or number..." required>
+            <input type="text" id="search" class="search" placeholder="Search Pokémon by name or number..." required onkeyup="return forceLower(this);">
           </p>
           <p>
             <button class="submit">Find Pokémon</button>

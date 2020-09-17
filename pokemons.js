@@ -3,7 +3,11 @@ const baseURL = 'https://pokeapi.co/api/v2/pokemon/';
 let url;
 
 //Search Form
-const searchTerm = document.querySelector('.search');
+const searchTerm = (document.querySelector('.search'));
+// var newSearchTerm = searchTerm.toString();
+// var newSearchTerm2 = newSearchTerm.toLocaleLowerCase();
+// var newSearchTerm3 = newSearchTerm2.toObject();
+// var pokemonToSearch = newSearchTerm.toLowerCase();
 const searchForm = document.querySelector('form');
 const submitBtn = document.querySelector('.submit');
 
@@ -21,11 +25,14 @@ function fetchResults(e){
     e.preventDefault();
     url = baseURL + searchTerm.value;
     console.log("URL:", url);
+    console.log(typeof(searchTerm))
     fetch(url)
         .then(function(result) {
             return result.json();
         }).then(function(json) {
-            console.log(json)    
+            console.log(json)
+            let type = json.types[0].type.name;
+            console.log(type);
             displayResults(json);
         });
     
@@ -91,16 +98,21 @@ function displayResults(json) {
     section.appendChild(card);
 }
 
+//Force search-term to be lower case because if the name isn't all lowercase, it returns 404 error
+function forceLower(strInput) 
+{
+strInput.value=strInput.value.toLowerCase();
+}
+
 //Determine Pokemon type to set card color
 function cardType(){
-    let pHeader = document.createElement('div');
-    if (type = 'grass'){
+    if (type === 'grass'){
         pHeader.style.color = 'green';
-    } else if (type = 'water') {
+    } else if (type === 'water') {
         pHeader.setAttribute('class', 'bg-primary')
-    } else if (type = 'fire') {
+    } else if (type === 'fire') {
         pHeader.setAttribute('class', 'bg-danger')
-    } else if (type = 'electric') {
-        pHeader.setAttribute('class', 'bg-warning')
+    } else if (type === 'electric') {
+        document.getElementsByClassName('card-header').style.backgroundColor = 'yellow !important'
     } else {}
 };
