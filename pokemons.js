@@ -2,8 +2,9 @@
 const baseURL = 'https://pokeapi.co/api/v2/pokemon/';
 let url;
 
-//Search Form
+//Search Box
 const searchTerm = (document.querySelector('.search'));
+const searchBox = (document.getElementById('searchBox'));
 // var newSearchTerm = searchTerm.toString();
 // var newSearchTerm2 = newSearchTerm.toLocaleLowerCase();
 // var newSearchTerm3 = newSearchTerm2.toObject();
@@ -34,6 +35,10 @@ function fetchResults(e){
             let type = json.types[0].type.name;
             console.log(type);
             displayResults(json);
+        }).catch((error) => {
+            console.log('ERROR');
+            document.querySelector('.searchError').style.display = "block";
+            searchBox.style.animation = 'error 0.5s infinite';
         });
     
 };
@@ -43,13 +48,12 @@ function displayResults(json) {
         section.removeChild(section.firstChild);//if it does remove the firstChild, this will clear the section to display the next results
         
     }
+    document.querySelector('.searchError').style.display = "none";
+    searchBox.style.animation = 'none';
     let pokemon = json.name;
     let pNum = json.id;
     let pImgSrc = json.sprites.front_default;
     let type = json.types[0].type.name;
-    // if (type = ) {
-
-    // };
     let ht = json.height;
     let wt = json.weight;
     console.log(pokemon);
@@ -67,7 +71,11 @@ function displayResults(json) {
     let pPic = document.createElement('img');
     pPic.setAttribute('class', 'dexImg')
     pPic.setAttribute('src', pImgSrc);
-    
+    if (pNum >= 808) {
+        pPic.setAttribute('src', './assets/pokeball.png')
+        pPic.style.width = '100px';
+        pPic.style.margin = '15px';
+    }
     let pType = document.createElement('p');
     pType.textContent = type;
     if (pType.textContent == 'electric'){
@@ -134,10 +142,8 @@ function displayResults(json) {
     card.appendChild(pHeader);
     card.appendChild(pPic);
     card.appendChild(pType);
-    card.appendChild(pWt); //then creating the heading 
+    card.appendChild(pWt);
     card.appendChild(pHt);
-     //then adding the image
-     //then adding the keywords paragraph
     section.appendChild(card);
 }
 
@@ -146,16 +152,3 @@ function forceLower(strInput)
 {
 strInput.value=strInput.value.toLowerCase();
 }
-
-//Determine Pokemon type to set card color
-// function cardType(){
-//     if (type === 'grass'){
-//         pHeader.style.color = 'green';
-//     } else if (type === 'water') {
-//         pHeader.setAttribute('class', 'bg-primary')
-//     } else if (type === 'fire') {
-//         pHeader.setAttribute('class', 'bg-danger')
-//     } else if (type === 'electric') {
-//         document.getElementsByClassName('card-header').style.backgroundColor = 'yellow !important'
-//     } else {}
-// };

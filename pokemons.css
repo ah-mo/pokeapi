@@ -9,8 +9,6 @@ html, body {
 
 /* Header Styles */
 
-
-
 header {
   background-color: #e4000f;
   padding: 75px 0 75px;
@@ -25,12 +23,8 @@ header h2 {
   text-align: center;
   font-size: 1.3em;
 }
-    
-/* .wrapper {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-} */
+
+/* Search Box */
 
 .searchHeader {
   background-color:#e4000f;
@@ -43,7 +37,6 @@ header h2 {
 }
 
 .controls {
-  flex: 1;
   margin: auto;
   max-width: 500px;
   box-shadow: 0px 2px 12px #888;
@@ -54,12 +47,6 @@ header h2 {
   padding: 25px 0 15px;
 }
 
-
-    
-.clearfix {
-  clear: both;
-}
-    
 button {
   border: none;
   border-radius: 50px;
@@ -79,6 +66,7 @@ input {
   min-width: 300px;
   text-align: center;
 }
+
 input:focus {
   border: none;
   border-radius: 50px;
@@ -87,27 +75,20 @@ input:focus {
   min-width: 300px;
   text-align: center;
 }
+
 /* Results */
 
 section {
-  flex-flow: column;
   max-width: 500px;
   margin:auto;
   text-transform: capitalize;
 }
 section div p {
-  flex: 1;
   text-align: right;
   margin-right: 10px;
 }
 
-section img {
-  flex: 4;
-  width: 150px;
-}
-
 .results {
-  flex: 1;
   padding: 10px;
 }
 
@@ -116,4 +97,23 @@ img {
   width: 150px;
 }
 
-    
+.searchError {
+  display:none;
+  color:red;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+@keyframes error {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

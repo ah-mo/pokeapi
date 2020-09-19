@@ -13,28 +13,26 @@
     <header>
       <h1>Austin's PC</h1>
       <h2>(not Bill's...)</h2>
-
     </header>
 
-    <div class="wrapper">
+    <div id="searchBox">
       <div class="controls">
         <div class="searchHeader">Which Pokémon are you looking for?</div>
         <!--Search Form-->
-        <form>
+        <form autocomplete="off">
           <p>
-            <!-- <label for="search">Which Pokémon are you looking for?</label> -->
+            <label for="searchError"></label>
             <input type="text" id="search" class="search" placeholder="Search Pokémon by name or number..." required onkeyup="return forceLower(this);">
           </p>
           <p>
             <button class="submit">Find Pokémon</button>
+            <label class="searchError">Error 404 // Enter a valid Pokémon Name or Number 1-893</label>
           </p>
         </form>
       </div>
-      <!--Results Section-->
+<!--Results-->
       <div class="results">
-          <!--Results From Request-->
         <section>
-
         </section>
       </div>
     </div>
